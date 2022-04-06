@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="BtnGoTo" xml:space="preserve">
+    <value>Go to top</value>
+  </data>
+  <data name="BtnRegister" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="MSGNOOK" xml:space="preserve">
+    <value>An error has occurred while submitting this request. Please try again later or contact us &lt;a href="http://commentform.marketforce.com/commentform/raisingcanes.aspx"&gt;here&lt;/a&gt;</value>
+  </data>
+  <data name="MSGOK" xml:space="preserve">
+    <value>You'll receive an e-mail acknowledging that we've received your request shortly. Our standard turnaround time for requests is 3-6 weeks.</value>
+  </data>
+  <data name="ContactFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="TitlePage" xml:space="preserve">
+    <value>Complete the data (TBD Webpage layout)</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="ContactEmailConfirm" xml:space="preserve">
+    <value>Confirm email address</value>
+  </data>
+  <data name="ContactForm" xml:space="preserve">
+    <value>Best way to Contact you</value>
+  </data>
+  <data name="ContactLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="AboutTheAccount" xml:space="preserve">
+    <value>Tell us more about your organization</value>
+  </data>
+  <data name="AccountCategory" xml:space="preserve">
+    <value>Organization Category</value>
+  </data>
+  <data name="AccountCategoryOthers" xml:space="preserve">
+    <value>Organization Category (Other)</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Organization Name</value>
+  </data>
+  <data name="AccountPhone" xml:space="preserve">
+    <value>Organization Phone Number</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="Zip" xml:space="preserve">
+    <value>ZIP Code</value>
+  </data>
+  <data name="AdditionalInformationEvent" xml:space="preserve">
+    <value>Any additional information we should know?</value>
+  </data>
+  <data name="EventAddress" xml:space="preserve">
+    <value>Will the event take place at Raising Cane's or at another address?</value>
+  </data>
+  <data name="EventCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="EventDate" xml:space="preserve">
+    <value>Event Date</value>
+  </data>
+  <data name="EventDescription" xml:space="preserve">
+    <value>Event Name</value>
+  </data>
+  <data name="EventState" xml:space="preserve">
+    <value>State/Province (i.e. TX, OH,AZ)</value>
+  </data>
+  <data name="EventStreet" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="EventZip" xml:space="preserve">
+    <value>ZIP/Postal code</value>
+  </data>
+  <data name="HowSupportedEvent" xml:space="preserve">
+    <value>How RC supported this event in the past?</value>
+  </data>
+  <data name="IdeasRCEvent" xml:space="preserve">
+    <value>Do you have any ideas on how you would like Raising Cane’s to help?</value>
+  </data>
+  <data name="PeopleEvent" xml:space="preserve">
+    <value>How many people do you expect to attend or support your event?</value>
+  </data>
+  <data name="PreferredRestaurant" xml:space="preserve">
+    <value>Select Restaurant</value>
+  </data>
+  <data name="PurposeEvent" xml:space="preserve">
+    <value>What is the purpose or goal of the event?</value>
+  </data>
+  <data name="SupportedEvent" xml:space="preserve">
+    <value>Has Raising Cane's supported this event in the past?</value>
+  </data>
+  <data name="UploadAdditionalInfEvent" xml:space="preserve">
+    <value>Upload any additional information documents about your event here (Max file size limit 10 Mb)</value>
+  </data>
+  <data name="UploadW9Event" xml:space="preserve">
+    <value>Raising Cane’s requires a W9 in order to provide funds from a Fundraiser or for a sponsorship. If you have your W-9 available, please upload here</value>
+  </data>
+  <data name="UsualRestaurant" xml:space="preserve">
+    <value>Is there a specific Raising Cane’s Restaurant you typically work with? If no, your request will be routed to the Restaurant closest to your organization address.</value>
+  </data>
+  <data name="MSGSavingData" xml:space="preserve">
+    <value>Saving data</value>
+  </data>
+  <data name="EventTime" xml:space="preserve">
+    <value>Event Time</value>
+  </data>
+  <data name="EventOtherAddress" xml:space="preserve">
+    <value>Please inform if the event address will be based on the Restaurant address or if it will be another one</value>
+  </data>
+  <data name="Restaurant" xml:space="preserve">
+    <value>Restaurant Location</value>
+  </data>
+  <data name="HostEvent" xml:space="preserve">
+    <value>Where do you want to host the Event?</value>
+  </data>
+  <data name="EventCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+</root>

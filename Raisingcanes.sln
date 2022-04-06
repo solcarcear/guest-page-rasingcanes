@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raisingcanes.Helper", "Raisingcanes.Helper\Raisingcanes.Helper.csproj", "{D6F43475-4DCD-4744-8EB6-F2655CF66996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raisingcanes.Site", "Raisingcanes.Site\Raisingcanes.Site.csproj", "{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F43475-4DCD-4744-8EB6-F2655CF66996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F43475-4DCD-4744-8EB6-F2655CF66996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F43475-4DCD-4744-8EB6-F2655CF66996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F43475-4DCD-4744-8EB6-F2655CF66996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

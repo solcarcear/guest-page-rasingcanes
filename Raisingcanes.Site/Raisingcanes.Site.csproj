@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8160CB91-DEBC-4B7F-A944-33EF0D8EF03A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Raisingcanes.Site</RootNamespace>
+    <AssemblyName>Raisingcanes.Site</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Register.aspx" />
+    <Content Include="Result.aspx" />
+    <Content Include="theme\css\materialize.css" />
+    <Content Include="theme\css\style.css" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\.gitignore" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\bower.json" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\fonts\fontello.eot" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\fonts\fontello.ttf" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\fonts\fontello.woff" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\LICENSE.md" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\package.json" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\README.md" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\sass\wickedpicker.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\dist\wickedpicker.min.css" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\dist\wickedpicker.min.js" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\fonts\fontello.svg" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\gulpfile.js" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\spec\wickedpickerSpec.js" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\src\wickedpicker.js" />
+    <Content Include="theme\ericjgagnon-wickedpicker-2a8950a\stylesheets\wickedpicker.css" />
+    <Content Include="theme\img\AjaxLoader.gif" />
+    <Content Include="theme\img\background.png" />
+    <Content Include="theme\img\check_radio_sheet.png" />
+    <Content Include="theme\img\contact_map.png" />
+    <Content Include="theme\img\CRS-GuestForm_Rails_LEFT.jpg" />
+    <Content Include="theme\img\CRS-GuestForm_Rails_RIGHT.jpg" />
+    <Content Include="theme\img\divider.png" />
+    <Content Include="theme\img\down_arrow_select.png" />
+    <Content Include="theme\img\down_arrow_select_2.png" />
+    <Content Include="theme\img\glyphicons-halflings-white.png" />
+    <Content Include="theme\img\glyphicons-halflings.png" />
+    <Content Include="theme\img\grabbing.png" />
+    <Content Include="theme\img\Icon114x114.jpg" />
+    <Content Include="theme\img\Icon144x144.jpg" />
+    <Content Include="theme\img\Icon57x57.jpg" />
+    <Content Include="theme\img\Icon72x72.jpg" />
+    <Content Include="theme\img\jquery.switch.png" />
+    <Content Include="theme\img\jquery.switch_old.png" />
+    <Content Include="theme\img\line_header.png" />
+    <Content Include="theme\img\logo-mobile.jpg" />
+    <Content Include="theme\img\logo.png" />
+    <Content Include="theme\img\minus.png" />
+    <Content Include="theme\img\plus.png" />
+    <Content Include="theme\img\shadow_top_form.png" />
+    <Content Include="theme\js\functions.js" />
+    <Content Include="theme\js\jquery-1.10.2.js" />
+    <Content Include="theme\js\jquery-1.10.2.min.js" />
+    <Content Include="theme\js\jquery-ui-1.8.22.min.js" />
+    <Content Include="theme\js\jquery.validate.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Messages.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Result.aspx.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Result.aspx.designer.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Raisingcanes.Helper\Raisingcanes.Helper.csproj">
+      <Project>{d6f43475-4dcd-4744-8eb6-f2655cf66996}</Project>
+      <Name>Raisingcanes.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3530</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3530/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
