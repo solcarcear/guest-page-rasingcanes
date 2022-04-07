@@ -17,6 +17,13 @@
     <link href="theme/css/style.css" rel="stylesheet">
     <link href="theme/css/materialize.css" rel="stylesheet">
     <link href="theme/ericjgagnon-wickedpicker-2a8950a/stylesheets/wickedpicker.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="src/css/app.css">
 
     <!-- New CSS -->
 
@@ -87,19 +94,9 @@
                     $("#noFileAdditionalInf").text("Files must not exceed the limit size of " +<%=ConfigurationManager.AppSettings["SizeLimitMB"] %>+"Mb");
                 }
             });
-            $("#cbHostEvent").on("change", (e) => {
-                let target = $(e.currentTarget);
-                console.log(target.val());
-            });
-        });
-
-        function showMap() {
-
-            alert("You can move search center, change radius and click on the restaurant on the map to select");
-        }
-
-        
+        });        
     </script>
+
 
 
 </head>
@@ -367,12 +364,17 @@
                                 <asp:DropDownList ID="cbPreferredRestaurant" CssClass="select-option-detail" Width="50%" runat="server"></asp:DropDownList>
                             </div>
                             <br />
+                             <br />
                           
                         </div>
 
 
 
-
+                        <div id="box-osm-map">
+                            <p>You can move search center, change radius and click on the restaurant on the map to select</p>
+                           <br />
+                            <div id="osm-map" ></div>                            
+                        </div>
 
 
 
@@ -679,6 +681,12 @@
     </div>
 
     <script src="theme/js/jquery.validate.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="src/app.js"></script>
 
 
 </body>
