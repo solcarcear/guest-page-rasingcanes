@@ -200,6 +200,7 @@ $(document).ready(function () {
             $('#txtEventState').val('');
             $('#txtEventZip').val('');
             $("#Div_PreferredRestaurant").show();
+
             $("#Div_HostEvent").show();
 
             $('#txtEventStreet').addClass("required");
@@ -214,6 +215,7 @@ $(document).ready(function () {
             $('#txtEventState').val('');
             $('#txtEventZip').val('');
             $("#Div_PreferredRestaurant").hide();
+
             $("#Div_HostEvent").hide();
 
             $('#txtEventStreet').removeClass("required");
