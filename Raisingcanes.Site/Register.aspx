@@ -352,16 +352,30 @@
 
 
 
-
-
-
-
-
                         <div id="Div_PreferredRestaurant">
                             <label class="t-label t-label-is-required"><%=Resources.Messages.PreferredRestaurant%></label>
                             <br />
                             <div class="select-option select-option-error">
                                 <asp:DropDownList ID="cbPreferredRestaurant" CssClass="select-option-detail" Width="50%" runat="server"></asp:DropDownList>
+                            </div>
+                            <br />
+                             <br />
+                          
+                        </div>
+                         <div id="box-radius">
+                            <label class="t-label t-label-is-required"><%=Resources.Messages.SearchRadius%></label>
+                            <br />
+                            <div class="select-option select-option-error">
+                                <asp:DropDownList ID="cbSearchRadius" CssClass="select-option-detail" Width="50%" runat="server">
+                                    <asp:ListItem Selected="True" Text="5 miles" Value="8046.72"></asp:ListItem>
+                                     <asp:ListItem  Text="10 miles" Value="16093.4"></asp:ListItem>
+                                     <asp:ListItem  Text="25 miles" Value="40233.6"></asp:ListItem>
+                                     <asp:ListItem  Text="50 miles" Value="80467.2"></asp:ListItem>
+                                     <asp:ListItem  Text="100 miles" Value="160934"></asp:ListItem>
+                                     <asp:ListItem Text="250 miles" Value="402336"></asp:ListItem>
+                                     <asp:ListItem  Text="500 miles" Value="804672"></asp:ListItem>
+                                     <asp:ListItem  Text="1000 miles" Value="1609344"></asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <br />
                              <br />
@@ -375,11 +389,6 @@
                            <br />
                             <div id="osm-map" ></div>                            
                         </div>
-
-
-
-
-
 
 
 

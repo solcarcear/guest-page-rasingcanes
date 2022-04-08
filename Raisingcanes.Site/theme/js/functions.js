@@ -13,7 +13,6 @@ $(function () {
     });
 
     $("#Div_PreferredRestaurant").hide();
-    $("#box-osm-map").hide();
 
     $('#divLoader').hide();    
 
@@ -172,7 +171,6 @@ $(document).ready(function () {
             $('#txtEventState').val($('#cbState option:selected').text());
             $('#txtEventZip').val($('#txtZip').val());
             $("#Div_PreferredRestaurant").hide();
-            $("#box-osm-map").hide();
             $("#Div_HostEvent").show();
 
             $('#txtEventStreet').addClass("required");
@@ -189,7 +187,6 @@ $(document).ready(function () {
             $('#txtEventZip').val('');
             $("#Div_HostEvent").hide();
             $("#Div_PreferredRestaurant").hide();
-            $("#box-osm-map").hide();
 
             $('#txtEventStreet').removeClass("required");
             $('#txtEventCity').removeClass("required");
@@ -203,7 +200,6 @@ $(document).ready(function () {
             $('#txtEventState').val('');
             $('#txtEventZip').val('');
             $("#Div_PreferredRestaurant").show();
-            $("#box-osm-map").show();
 
             $("#Div_HostEvent").show();
 
@@ -219,7 +215,6 @@ $(document).ready(function () {
             $('#txtEventState').val('');
             $('#txtEventZip').val('');
             $("#Div_PreferredRestaurant").hide();
-            $("#box-osm-map").hide();
 
             $("#Div_HostEvent").hide();
 

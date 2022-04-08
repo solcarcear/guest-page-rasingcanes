@@ -252,4 +252,7 @@
   <data name="EventCountry" xml:space="preserve">
     <value>Country</value>
   </data>
+  <data name="SearchRadius" xml:space="preserve">
+    <value>Search Radius</value>
+  </data>
 </root>
