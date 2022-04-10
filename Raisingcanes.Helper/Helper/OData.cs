@@ -1348,12 +1348,72 @@ namespace Raisingcanes.Helper
             return builder.ToString();
 
         }
-
-
         private string PrepareForQuery(string query)
         {
             return query.Trim().Replace(' ', '+');
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        public string GetRestaurantsAvailables()
+        {
+            var table = "UsrRestaurants";
+            string requestUri = serverUriUsr + table + "Collection?$filter = UsrIsAvaliable eq true";
+
+            var request = HttpWebRequest.Create(requestUri) as HttpWebRequest;
+            request.Method = "GET";
+            CookieCollection cookieCollection = AuthCookie.GetCookies(new Uri(authServiceUri));
+            string csrfToken = cookieCollection["BPMCSRF"].Value;
+            request.CookieContainer = AuthCookie;
+            request.Headers.Add("BPMCSRF", csrfToken);
+            request.Headers.Set("ForceUseSession", "true");
+       
+
+            using (var response = request.GetResponse())
+            {
+                if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
+                {
+                    XDocument xmlDoc = XDocument.Load(response.GetResponseStream());
+                    response.Close();
+
+
+                    IEnumerable<Address> items = from entry in xmlDoc.Descendants(dsmd + "properties")
+                                                 select new Address()
+                                                 {
+                                                     Street = entry.Element(ds + "UsrAddress").Value,
+                                                     Zip = entry.Element(ds + "UsrZipCode").Value,
+                                                     RestaurantCode = entry.Element(ds + "Id").Value,
+                                                     RestaurantName = entry.Element(ds + "UsrRestaurantName").Value,
+                                                     RestaurantNumber = entry.Element(ds + "UsrName").Value,
+                                                     CityId = this.GetEntityIdByFieldCustom("City", "Id", entry.Element(ds + "UsrCityId").Value),
+                                                     StateId = this.GetEntityIdByFieldCustom("Region", "Id", entry.Element(ds + "UsrStateId").Value),
+                                                     Lon = entry.Element(ds + "UsrYCoord").Value,
+                                                     Lat = entry.Element(ds + "UsrXCoord").Value,  
+                                                 };
+                    var listRestaurants = items.ToList();
+           
+
+                    return JsonConvert.SerializeObject(listRestaurants);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+
+
+
+
 
 
         #endregion

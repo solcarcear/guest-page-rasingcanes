@@ -36,7 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="theme/js/functions.js"></script>
     <script type="text/javascript">
-        var _isInitialLoad = true;
+        var _isInitialLoad = true;        
         function PageLoad() {
             if (_isInitialLoad) {
                 if ($('#hdnLoaded').val())
@@ -45,6 +45,10 @@
                 setTimeout('__doPostBack(\'<%= this.btnPageLoad.ClientID %>\',\'\');', 100);
             }
         }
+
+
+
+
     </script>
     <script>
         $(function () {
@@ -695,6 +699,7 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
+     <script src="src/blockUI.js"></script>
     <script src="src/app.js"></script>
 
 

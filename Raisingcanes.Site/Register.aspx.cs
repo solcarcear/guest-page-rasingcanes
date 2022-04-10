@@ -107,7 +107,16 @@ namespace Raisingcanes.Site
                         this.cbPreferredRestaurant.Items.Add(new ListItem() { Value = item.Id, Text = item.Text });
                     }
 
+                    var availableRestaurants = GetAvailableRestaurants();
+                    if (!string.IsNullOrEmpty(availableRestaurants)) {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "AvailableRestaurants", $"<script>const raisingRestaurants = {availableRestaurants};</script>", false);
+                    }
+
+
+
                     #endregion
+
+
 
 
                 }
@@ -275,16 +284,6 @@ namespace Raisingcanes.Site
             }
         }
 
-        //[WebMethod]
-        //public static string GetCitiesByState(string StateId)
-        //{
-        //    using (OData helper = new OData())
-        //    {
-        //        var CitiesList = helper.GetEntityIdByFieldCity("UsrRestaurants", "UsrState/Id", StateId);
-        //        return CitiesList;
-        //    }
-        //}
-
         [WebMethod]
         public static string GetRestaurants(string Id)
         {
@@ -312,6 +311,22 @@ namespace Raisingcanes.Site
                 return position;
             }
         }
+
+
+        public string GetAvailableRestaurants()
+        {
+            using (OData helper = new OData())
+            {
+                var RestaurantsList = helper.GetRestaurantsAvailables();
+                return RestaurantsList;
+            }
+        }
+
+
+
+
+
+
 
 
     }

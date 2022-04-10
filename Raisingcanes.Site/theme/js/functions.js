@@ -199,7 +199,7 @@ $(document).ready(function () {
             $('#txtEventCity').val('');
             $('#txtEventState').val('');
             $('#txtEventZip').val('');
-            $("#Div_PreferredRestaurant").show();
+            //$("#Div_PreferredRestaurant").show();
 
             $("#Div_HostEvent").show();
 
