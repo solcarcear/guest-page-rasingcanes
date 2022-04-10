@@ -50,22 +50,22 @@ namespace Raisingcanes.Site
 
                     //HostEvent #57
                     var HostEvent = helper.GetLookup("UsrEventAddressType", "Name");
-                    this.cbHostEvent.Items.Clear();                    
+                    this.cbHostEvent.Items.Clear();
                     foreach (var item in HostEvent)
                     {
-                        if(item.Id == "edbfdd08-96f8-4a9a-b636-808ae93677d0")
+                        if (item.Id == "edbfdd08-96f8-4a9a-b636-808ae93677d0")
                         {
                             this.cbHostEvent.Items.Add(new ListItem() { Value = item.Id, Text = item.Text, Selected = true });
                         }
                         else if (item.Id == "91bf9e7a-9ffd-45df-b972-22c08e02497e")
                         {
-                            
+
                         }
                         else
                         {
                             this.cbHostEvent.Items.Add(new ListItem() { Value = item.Id, Text = item.Text });
-                        }                        
-                    }                    
+                        }
+                    }
 
                     //this.cbEventState.Items.Clear();
                     //this.cbEventState.Items.Add(new ListItem() { Value = "", Text = "", Selected = true });
@@ -171,9 +171,9 @@ namespace Raisingcanes.Site
                     string[] strValue = this.EventTime1.Value.Split(':');
                     int hour = Convert.ToInt32(strValue[0].Trim());
                     int min = Convert.ToInt32(strValue[1].Trim().Substring(0, 2));
-                    if (strValue[1].Contains("PM") && hour<12)
+                    if (strValue[1].Contains("PM") && hour < 12)
                         hour += 12;
-                     _Data.oCase.TimeEvent = new TimeSpan(hour, min, 0);
+                    _Data.oCase.TimeEvent = new TimeSpan(hour, min, 0);
                 }
 
                 if (!string.IsNullOrEmpty(this.txtEventCity.Text))
@@ -254,7 +254,7 @@ namespace Raisingcanes.Site
                 using (var ohelper = new OData())
                 {
                     if (ohelper.SaveData(_Data))
-                    {                        
+                    {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#ModalOk').modal('open'); $('#cbContactForm').css({ 'z-index': '0', 'display': 'block'}); });</script>", false);
                     }
                     else
@@ -294,13 +294,24 @@ namespace Raisingcanes.Site
                 return RestaurantsList;
             }
         }
-
         protected override void InitializeCulture()
         {
             UICulture = "en-us";
             base.InitializeCulture();
         }
 
+
+
+
+        [WebMethod]
+        public static string GetPositionByCustomerAddress(string state, string city, string address)
+        {
+            using (OData helper = new OData())
+            {
+                var position = helper.GetPositionByAddress("United States", state, city, address);
+                return position;
+            }
+        }
 
 
     }

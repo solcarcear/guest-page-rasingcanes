@@ -8,10 +8,11 @@ const searchArea = L.circle(defaultPosition, {
     color: 'gray',
     fillColor: '#808080',
     fillOpacity: 0.5,
-    radius: 8046.72,
+    radius: 8046.72
 })
 
 $(function () {
+    mapOsm.options.activo = false;
     $("#box-radius").hide();
     $("#box-osm-map").hide();
     $("#cbHostEvent").on("change", (e) => {
@@ -21,24 +22,31 @@ $(function () {
             drawSearchRadius(mapOsm);
             $("#box-radius").show();
             $("#box-osm-map").show();
+            mapOsm.options.activo = true;
+            setCustomerPosition();
+
         } else {
             cleanMap();
             $("#box-radius").hide();
-            $("#box-osm-map").hide();   
+            $("#box-osm-map").hide();
+            mapOsm.options.activo = false;
+
         }
     });
 
     $("#cbSearchRadius").on("change", (e) => {
         const value = $(e.target).val();
         searchArea.setRadius(value);
-
     });
+    $("#cbState").on("change", (e) => { setCustomerPosition() });
+    $("#txtCity").on("change", (e) => { setCustomerPosition() });
+    $("#txtStreet").on("change", (e) => { setCustomerPosition() });
 });
 
 function getMap() {
     const tilesProvider = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     let myMap = L.map('osm-map');
-    myMap.setView(defaultPosition, 12);
+    myMap.setView(defaultPosition, 10);
     L.tileLayer(tilesProvider, {
         maxZoom: 18
     }).addTo(myMap);
@@ -62,7 +70,9 @@ function drawPosition(map) {
         let marker = evt.target;
         let position = marker.getLatLng();
         const { lat, lng } = position;
-        searchArea.setLatLng([lat,lng]);
+        searchArea.setLatLng([lat, lng]);
+
+
     });
 }
 
@@ -80,6 +90,25 @@ function cleanMap() {
     searchArea.remove();
     marker.remove();
 }
+
+function setCustomerPosition() {
+    if (mapOsm.options.activo) {
+        const state = $("#cbState option:selected").text();
+        const city = $("#txtCity").val();
+        const street = $("#txtStreet").val();
+        PageMethods.GetPositionByCustomerAddress(state, city, street, (result) => {
+            const obj = JSON.parse(result);
+            if (obj.length) {
+                const { lat, lon } = obj[0];
+                mapOsm.setView([lat, lon], 10);
+                marker.setLatLng([lat, lon]);
+                searchArea.setLatLng([lat, lon]);
+            }
+        });
+    }
+}
+
+
 
 
 

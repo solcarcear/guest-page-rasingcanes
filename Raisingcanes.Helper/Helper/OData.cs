@@ -11,6 +11,9 @@ using System.Configuration;
 using System.Xml;
 using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Web;
 
 namespace Raisingcanes.Helper
 {
@@ -20,6 +23,7 @@ namespace Raisingcanes.Helper
         private static readonly XNamespace ds = "http://schemas.microsoft.com/ado/2007/08/dataservices";
         private static readonly XNamespace dsmd = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata";
         private static readonly XNamespace atom = "http://www.w3.org/2005/Atom";
+
 
         string baseUri;
         string authServiceUri;
@@ -1292,6 +1296,69 @@ namespace Raisingcanes.Helper
         }
 
         #endregion
+
+        #region OSM MAP
+
+        public string GetPositionByAddress(string country, string state, string city, string address)
+        {
+            var url = GetSearchQueryUrl(country, state, city, address); 
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("User-Agent", "Raising Canes");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            response.EnsureSuccessStatusCode();
+
+            var result = response.Content.ReadAsStringAsync().Result;
+
+            return result;
+        }
+        private string GetSearchQueryUrl(string country, string state, string city, string address)
+        {
+            var baseUrl = "http://nominatim.openstreetmap.org/search";
+
+            var builder = new UriBuilder(baseUrl);
+            builder.Port = -1;
+            var query = HttpUtility.ParseQueryString(builder.Query);
+            if (!string.IsNullOrEmpty(country))
+            {
+                query["country"] = PrepareForQuery(country);
+            }
+            else {
+                query["country"] = "United+States";
+            }
+            if (!string.IsNullOrEmpty(state))
+            {
+                query["state"] = PrepareForQuery(state);
+
+            }
+            if (!string.IsNullOrEmpty(city))
+            {
+                query["city"] = PrepareForQuery(city);
+
+            }
+            if (!string.IsNullOrEmpty(address))
+            {
+                query["street"] = PrepareForQuery(address);
+
+            }
+            query["format"] = "json";
+            builder.Query = query.ToString();
+
+            return builder.ToString();
+
+        }
+
+
+        private string PrepareForQuery(string query)
+        {
+            return query.Trim().Replace(' ', '+');
+        }
+
+
+        #endregion
+
+
 
     }
 }
